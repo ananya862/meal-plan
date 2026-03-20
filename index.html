@@ -27,11 +27,39 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
+    padding: 60px 20px 80px;
   }
 
   .container { max-width: 520px; width: 100%; }
+
+  /* Recipe Generator Section */
+  .recipe-section {
+    max-width: 820px;
+    width: 100%;
+    margin-top: 48px;
+  }
+  .recipe-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .recipe-header h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--forest);
+  }
+  .recipe-header::after {
+    content: ''; flex: 1; height: 1px; background: var(--border);
+  }
+  .recipe-header p { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+  .iframe-wrapper {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(30, 90, 50, 0.08);
+  }
 
   /* Header */
   .header { text-align: center; margin-bottom: 40px; }
@@ -167,5 +195,28 @@
   <div class="footer">Made with 🥦 · Gluten-free &amp; Dairy-free</div>
 
 </div>
+
+<!-- Recipe Generator -->
+<div class="recipe-section">
+  <div class="recipe-header">
+    <span style="font-size:22px">🤖</span>
+    <h2>AI Recipe Generator</h2>
+  </div>
+  <p style="font-size:13px; color:var(--muted); margin-bottom:16px; max-width:520px;">
+    Generate custom gluten-free & dairy-free recipes on the fly — just describe what you're craving!
+  </p>
+  <div class="iframe-wrapper">
+    <iframe
+      src="https://claude.site/public/artifacts/35a09e22-6dc9-4af4-bf32-50b5418e5e0b/embed"
+      title="Claude Artifact"
+      width="100%"
+      height="600"
+      frameborder="0"
+      allow="clipboard-write"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
 </body>
 </html>
