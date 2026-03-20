@@ -3,21 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>7-Day Weight Loss Meal Plan</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<title>My Meal Plans</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #1a1208;
-    --paper: #fdf8f0;
-    --warm-white: #fffdf8;
-    --soy: #8b4513;
-    --matcha: #4a7c59;
-    --miso: #c8860a;
-    --sakura: #d4788a;
-    --accent: #c8860a;
-    --border: #e8d9c0;
-    --soft: #f5ede0;
-    --tag-bg: #fff3e0;
+    --ink: #0f1a14;
+    --paper: #f4f9f5;
+    --forest: #1e5c3a;
+    --moss: #2e7d4f;
+    --sage: #4a7c59;
+    --border: #c4d9cb;
+    --soft: #e8f2eb;
+    --muted: #5a6e5f;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -26,780 +23,148 @@
     background: var(--paper);
     font-family: 'DM Sans', sans-serif;
     color: var(--ink);
-    line-height: 1.6;
-  }
-
-  /* Decorative noise texture overlay */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.4;
-  }
-
-  .page { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding: 40px 32px 80px; }
-
-  /* ── HEADER ── */
-  .hero {
-    text-align: center;
-    padding: 56px 0 48px;
-    border-bottom: 2px solid var(--border);
-    margin-bottom: 48px;
-    position: relative;
-  }
-  .hero::after {
-    content: '米';
-    font-family: 'Noto Serif JP', serif;
-    font-size: 120px;
-    color: var(--border);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    opacity: 0.5;
-  }
-  .hero-eyebrow {
-    font-size: 11px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--miso);
-    font-weight: 600;
-    margin-bottom: 14px;
-  }
-  .hero h1 {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(32px, 6vw, 52px);
-    font-weight: 700;
-    line-height: 1.2;
-    color: var(--ink);
-    margin-bottom: 16px;
-  }
-  .hero h1 span { color: var(--miso); }
-  .hero-sub {
-    font-size: 15px;
-    color: #6b5a45;
-    max-width: 560px;
-    margin: 0 auto 24px;
-    font-weight: 300;
-    font-style: italic;
-  }
-  .badges {
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-  }
-  .badge {
-    background: var(--soft);
-    border: 1px solid var(--border);
-    color: var(--soy);
-    font-size: 12px;
-    font-weight: 500;
-    padding: 5px 14px;
-    border-radius: 20px;
-    letter-spacing: 0.5px;
-  }
-  .badge.green { background: #edf5f0; border-color: #b8d4c0; color: var(--matcha); }
-  .badge.red { background: #fdf0f0; border-color: #f0c0c0; color: var(--sakura); }
-
-  /* ── INTRO NOTE ── */
-  .intro-box {
-    background: linear-gradient(135deg, #fff9ee 0%, #fff3e0 100%);
-    border-left: 4px solid var(--miso);
-    border-radius: 0 8px 8px 0;
-    padding: 20px 24px;
-    margin-bottom: 48px;
-    font-size: 14px;
-    color: #5a4a35;
-    line-height: 1.7;
-  }
-  .intro-box strong { color: var(--soy); }
-
-  /* ── SECTION TITLES ── */
-  .section-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 22px;
-    color: var(--ink);
-    margin-bottom: 28px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .section-title::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
+    padding: 40px 20px;
   }
 
-  /* ── MACRO OVERVIEW TABLE ── */
-  .macro-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 56px;
-    font-size: 13.5px;
-  }
-  .macro-table thead tr {
-    background: var(--ink);
-    color: var(--paper);
-  }
-  .macro-table thead th {
-    padding: 12px 16px;
-    text-align: left;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    font-size: 12px;
-    text-transform: uppercase;
-  }
-  .macro-table tbody tr { border-bottom: 1px solid var(--border); }
-  .macro-table tbody tr:nth-child(even) { background: var(--soft); }
-  .macro-table tbody td { padding: 11px 16px; color: #3a2e1e; }
-  .macro-table tbody td:first-child { font-weight: 600; color: var(--soy); }
-  .bar {
-    display: inline-block;
-    height: 8px;
-    border-radius: 4px;
-    margin-left: 8px;
-    vertical-align: middle;
-  }
-  .bar-cal { background: var(--miso); }
-  .bar-p { background: var(--matcha); }
-  .bar-c { background: var(--sakura); }
-  .bar-f { background: #7ba7d4; }
+  .container { max-width: 520px; width: 100%; }
 
-  /* ── DAY CARDS ── */
-  .day-grid { display: flex; flex-direction: column; gap: 40px; margin-bottom: 56px; }
-
-  .day-card {
-    background: var(--warm-white);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 12px rgba(90, 60, 20, 0.06);
-  }
-  .day-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 24px;
-    border-bottom: 1px solid var(--border);
-  }
-  .day-header-left { display: flex; align-items: center; gap: 14px; }
-  .day-number {
+  /* Header */
+  .header { text-align: center; margin-bottom: 40px; }
+  .header .icon { font-size: 40px; margin-bottom: 12px; }
+  .header h1 {
     font-family: 'Noto Serif JP', serif;
     font-size: 28px;
     font-weight: 700;
-    color: var(--paper);
-    background: var(--ink);
-    width: 52px;
-    height: 52px;
+    color: var(--forest);
+    margin-bottom: 8px;
+  }
+  .header p { font-size: 14px; color: var(--muted); font-weight: 300; }
+
+  /* Link List */
+  .link-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+
+  .link-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  .link-card:hover {
+    border-color: var(--moss);
+    box-shadow: 0 4px 16px rgba(30, 90, 50, 0.12);
+    transform: translateY(-1px);
+  }
+  .link-card:hover .arrow { transform: translateX(4px); color: var(--moss); }
+
+  .link-icon {
+    font-size: 28px;
+    width: 48px;
+    height: 48px;
+    background: var(--soft);
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 8px;
     flex-shrink: 0;
   }
-  .day-title-block h2 {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--ink);
-    margin-bottom: 2px;
+  .link-text { flex: 1; }
+  .link-text .title { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
+  .link-text .desc { font-size: 12px; color: var(--muted); }
+  .link-tags { display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; }
+  .tag {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: var(--soft);
+    color: var(--sage);
+    border: 1px solid var(--border);
   }
-  .day-title-block .cuisine-tag {
+  .tag.amber { background: #fff3e0; color: #c8760a; border-color: #f0d090; }
+
+  .arrow {
+    font-size: 18px;
+    color: var(--border);
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  /* Divider */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 8px 0;
+    color: var(--muted);
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--miso);
-    font-weight: 600;
   }
-  .day-macros {
-    display: flex;
-    gap: 16px;
-    font-size: 12px;
-  }
-  .macro-pill {
-    text-align: center;
-    background: var(--soft);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 5px 10px;
-    min-width: 54px;
-  }
-  .macro-pill .val { display: block; font-weight: 700; font-size: 14px; color: var(--soy); }
-  .macro-pill .lbl { display: block; font-size: 10px; color: #8a7060; text-transform: uppercase; letter-spacing: 0.5px; }
-  .macro-pill.total .val { color: var(--miso); }
-
-  .meals-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 0;
-  }
-  .meal-item {
-    padding: 18px 22px;
-    border-right: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-  .meal-item:nth-child(4n) { border-right: none; }
-  .meal-item:last-child, .meal-item:nth-last-child(-n+4) { }
-
-  .meal-type {
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .meal-type.breakfast { color: #d4880a; }
-  .meal-type.lunch { color: var(--matcha); }
-  .meal-type.dinner { color: var(--soy); }
-  .meal-type.snack { color: var(--sakura); }
-  .meal-icon { font-size: 14px; }
-
-  .meal-name {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--ink);
-    margin-bottom: 5px;
-    line-height: 1.3;
-  }
-  .meal-desc {
-    font-size: 12px;
-    color: #7a6a55;
-    line-height: 1.5;
-    margin-bottom: 8px;
-    font-style: italic;
-  }
-  .meal-cal {
-    font-size: 12px;
-    color: var(--miso);
-    font-weight: 600;
+  .divider::before, .divider::after {
+    content: ''; flex: 1; height: 1px; background: var(--border);
   }
 
-  /* ── TIPS SECTION ── */
-  .tips-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 18px;
-    margin-bottom: 56px;
-  }
-  .tip-card {
-    background: var(--soft);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 20px;
-  }
-  .tip-card h4 {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--soy);
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .tip-card p, .tip-card ul { font-size: 13px; color: #5a4a35; line-height: 1.7; }
-  .tip-card ul { padding-left: 16px; }
-  .tip-card li { margin-bottom: 4px; }
-
-  /* ── FOOTER ── */
-  .footer {
-    text-align: center;
-    padding: 32px 0 0;
-    border-top: 1px solid var(--border);
-    font-size: 12px;
-    color: #9a8a75;
-    line-height: 1.8;
-  }
-  .footer strong { color: var(--soy); }
-
-  @media (max-width: 600px) {
-    .page { padding: 24px 16px 60px; }
-    .meals-grid { grid-template-columns: 1fr 1fr; }
-    .day-macros { display: none; }
-    .hero h1 { font-size: 28px; }
-  }
+  /* Footer */
+  .footer { text-align: center; font-size: 12px; color: var(--muted); }
 </style>
 </head>
 <body>
-<div class="page">
+<div class="container">
 
-  <!-- HERO -->
-  <header class="hero">
-    <p class="hero-eyebrow">Registered Dietitian · Weight Loss Plan</p>
-    <h1>Your <span>7-Day</span> Meal Plan</h1>
-    <p class="hero-sub">Asian-inspired, 1200 calories per day — gluten-free & dairy-free, built for real kitchens and real lives.</p>
-    <div class="badges">
-      <span class="badge green">✓ Gluten-Free</span>
-      <span class="badge green">✓ Dairy-Free</span>
-      <span class="badge">🍜 80% Asian Cuisine</span>
-      <span class="badge red">🔥 ~1200 kcal/day</span>
-      <span class="badge">🥗 High Protein</span>
-    </div>
-  </header>
-
-  <!-- INTRO NOTE -->
-  <div class="intro-box">
-    <strong>👋 A note before you cook!</strong> This plan is designed for variety and enjoyment — featuring Japanese, Korean, Vietnamese, Thai, Chinese, and Indian cuisines, with one Western day thrown in. All meals use <strong>tamari (GF soy sauce)</strong>, <strong>coconut milk or coconut yogurt</strong> as dairy substitutes, and <strong>certified GF ingredients</strong>. Meal prep where you can (e.g. cook a big pot of rice on Sunday). Adjust portions slightly if you're more or less active on a given day. Stay hydrated — aim for 8 glasses of water daily! 💧
+  <div class="header">
+    <div class="icon">🍱</div>
+    <h1>My Meal Plans</h1>
+    <p>Gluten-free · Dairy-free · Asian-inspired · ~1200 kcal</p>
   </div>
 
-  <!-- MACRO OVERVIEW TABLE -->
-  <h2 class="section-title">📊 Weekly Macro Snapshot</h2>
-  <table class="macro-table">
-    <thead>
-      <tr>
-        <th>Day</th>
-        <th>Cuisine Theme</th>
-        <th>Calories</th>
-        <th>Protein</th>
-        <th>Carbs</th>
-        <th>Fat</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Day 1</td>
-        <td>Japanese</td>
-        <td>1,185 kcal <span class="bar bar-cal" style="width:55px"></span></td>
-        <td>92g <span class="bar bar-p" style="width:46px"></span></td>
-        <td>112g <span class="bar bar-c" style="width:42px"></span></td>
-        <td>35g <span class="bar bar-f" style="width:28px"></span></td>
-      </tr>
-      <tr>
-        <td>Day 2</td>
-        <td>Vietnamese</td>
-        <td>1,160 kcal <span class="bar bar-cal" style="width:52px"></span></td>
-        <td>78g <span class="bar bar-p" style="width:39px"></span></td>
-        <td>138g <span class="bar bar-c" style="width:52px"></span></td>
-        <td>28g <span class="bar bar-f" style="width:22px"></span></td>
-      </tr>
-      <tr>
-        <td>Day 3</td>
-        <td>Korean</td>
-        <td>1,195 kcal <span class="bar bar-cal" style="width:56px"></span></td>
-        <td>85g <span class="bar bar-p" style="width:43px"></span></td>
-        <td>130g <span class="bar bar-c" style="width:49px"></span></td>
-        <td>34g <span class="bar bar-f" style="width:27px"></span></td>
-      </tr>
-      <tr>
-        <td>Day 4</td>
-        <td>Thai</td>
-        <td>1,200 kcal <span class="bar bar-cal" style="width:57px"></span></td>
-        <td>68g <span class="bar bar-p" style="width:34px"></span></td>
-        <td>140g <span class="bar bar-c" style="width:53px"></span></td>
-        <td>38g <span class="bar bar-f" style="width:30px"></span></td>
-      </tr>
-      <tr>
-        <td>Day 5</td>
-        <td>Chinese</td>
-        <td>1,195 kcal <span class="bar bar-cal" style="width:56px"></span></td>
-        <td>94g <span class="bar bar-p" style="width:47px"></span></td>
-        <td>118g <span class="bar bar-c" style="width:44px"></span></td>
-        <td>34g <span class="bar bar-f" style="width:27px"></span></td>
-      </tr>
-      <tr>
-        <td>Day 6</td>
-        <td>Western (Scratch)</td>
-        <td>1,215 kcal <span class="bar bar-cal" style="width:58px"></span></td>
-        <td>97g <span class="bar bar-p" style="width:49px"></span></td>
-        <td>108g <span class="bar bar-c" style="width:41px"></span></td>
-        <td>46g <span class="bar bar-f" style="width:37px"></span></td>
-      </tr>
-      <tr>
-        <td>Day 7</td>
-        <td>Indian</td>
-        <td>1,175 kcal <span class="bar bar-cal" style="width:54px"></span></td>
-        <td>82g <span class="bar bar-p" style="width:41px"></span></td>
-        <td>128g <span class="bar bar-c" style="width:48px"></span></td>
-        <td>32g <span class="bar bar-f" style="width:26px"></span></td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="link-list">
 
-  <!-- DAY CARDS -->
-  <h2 class="section-title">🍱 Daily Meal Plans</h2>
-  <div class="day-grid">
+    <a class="link-card" href="meal-plan-v1.html">
+      <div class="link-icon">🌸</div>
+      <div class="link-text">
+        <div class="title">Original 7-Day Plan</div>
+        <div class="desc">Balanced macros, Asian cuisines, variety-focused</div>
+        <div class="link-tags">
+          <span class="tag">~1200 kcal</span>
+          <span class="tag">Balanced</span>
+          <span class="tag amber">80% Asian</span>
+        </div>
+      </div>
+      <div class="arrow">›</div>
+    </a>
 
-    <!-- DAY 1 -->
-    <div class="day-card">
-      <div class="day-header">
-        <div class="day-header-left">
-          <div class="day-number">01</div>
-          <div class="day-title-block">
-            <h2>Day One</h2>
-            <span class="cuisine-tag">🇯🇵 Japanese Flavours</span>
-          </div>
-        </div>
-        <div class="day-macros">
-          <div class="macro-pill total"><span class="val">1,185</span><span class="lbl">kcal</span></div>
-          <div class="macro-pill"><span class="val">92g</span><span class="lbl">protein</span></div>
-          <div class="macro-pill"><span class="val">112g</span><span class="lbl">carbs</span></div>
-          <div class="macro-pill"><span class="val">35g</span><span class="lbl">fat</span></div>
-        </div>
-      </div>
-      <div class="meals-grid">
-        <div class="meal-item">
-          <div class="meal-type breakfast"><span class="meal-icon">🌅</span> Breakfast</div>
-          <div class="meal-name">Tamago Gohan + Miso Soup</div>
-          <div class="meal-desc">Soft-cooked egg over warm steamed rice with GF tamari & furikake, served with tofu & wakame miso soup (GF white miso)</div>
-          <div class="meal-cal">~280 kcal · 16g P · 38g C · 7g F</div>
-        </div>
-        <div class="meal-item">
-          <div class="meal-type lunch"><span class="meal-icon">☀️</span> Lunch</div>
-          <div class="meal-name">Chicken Teriyaki Bowl</div>
-          <div class="meal-desc">Grilled chicken thigh with homemade GF tamari-teriyaki glaze over brown rice, with steamed edamame & shredded cabbage slaw</div>
-          <div class="meal-cal">~385 kcal · 38g P · 40g C · 9g F</div>
-        </div>
-        <div class="meal-item">
-          <div class="meal-type dinner"><span class="meal-icon">🌙</span> Dinner</div>
-          <div class="meal-name">Miso-Glazed Salmon + Bok Choy</div>
-          <div class="meal-desc">GF miso & sesame-glazed salmon fillet, wok-charred baby bok choy with garlic, served with cauliflower rice</div>
-          <div class="meal-cal">~400 kcal · 36g P · 22g C · 17g F</div>
-        </div>
-        <div class="meal-item">
-          <div class="meal-type snack"><span class="meal-icon">🍃</span> Snack</div>
-          <div class="meal-name">Cucumber Rice Crackers</div>
-          <div class="meal-desc">Thinly sliced cucumber with GF rice crackers and a drizzle of sesame oil + pinch of sea salt</div>
-          <div class="meal-cal">~120 kcal · 2g P · 22g C · 2g F</div>
-        </div>
-      </div>
-    </div>
+    <div class="divider">also</div>
 
-    <!-- DAY 2 -->
-    <div class="day-card">
-      <div class="day-header">
-        <div class="day-header-left">
-          <div class="day-number">02</div>
-          <div class="day-title-block">
-            <h2>Day Two</h2>
-            <span class="cuisine-tag">🇻🇳 Vietnamese Freshness</span>
-          </div>
-        </div>
-        <div class="day-macros">
-          <div class="macro-pill total"><span class="val">1,160</span><span class="lbl">kcal</span></div>
-          <div class="macro-pill"><span class="val">78g</span><span class="lbl">protein</span></div>
-          <div class="macro-pill"><span class="val">138g</span><span class="lbl">carbs</span></div>
-          <div class="macro-pill"><span class="val">28g</span><span class="lbl">fat</span></div>
+    <a class="link-card" href="meal-plan-v2.html">
+      <div class="link-icon">💪</div>
+      <div class="link-text">
+        <div class="title">High Protein Plan</div>
+        <div class="desc">Low carb, ~115g protein/day, no yogurt</div>
+        <div class="link-tags">
+          <span class="tag">~1200 kcal</span>
+          <span class="tag">High Protein</span>
+          <span class="tag">Low Carb</span>
+          <span class="tag amber">No Yogurt</span>
         </div>
       </div>
-      <div class="meals-grid">
-        <div class="meal-item">
-          <div class="meal-type breakfast"><span class="meal-icon">🌅</span> Breakfast</div>
-          <div class="meal-name">Vietnamese Egg & Rice</div>
-          <div class="meal-desc">Fried eggs with steamed jasmine rice, sliced scallions, sriracha, and pickled daikon on the side — simple, satisfying, quick</div>
-          <div class="meal-cal">~270 kcal · 14g P · 33g C · 9g F</div>
-        </div>
-        <div class="meal-item">
-          <div class="meal-type lunch"><span class="meal-icon">☀️</span> Lunch</div>
-          <div class="meal-name">Chicken Pho Noodle Soup</div>
-          <div class="meal-desc">Aromatic star anise & ginger broth with rice noodles, poached chicken breast, bean sprouts, fresh herbs, lime & GF hoisin</div>
-          <div class="meal-cal">~360 kcal · 32g P · 45g C · 5g F</div>
-        </div>
-        <div class="meal-item">
-          <div class="meal-type dinner"><span class="meal-icon">🌙</span> Dinner</div>
-          <div class="meal-name">Lemongrass Tofu Stir-Fry</div>
-          <div class="meal-desc">Crispy pan-fried tofu with lemongrass, chilli, garlic & GF fish sauce stir-fry, served over jasmine rice with stir-fried morning glory</div>
-          <div class="meal-cal">~425 kcal · 23g P · 52g C · 12g F</div>
-        </div>
-        <div class="meal-item">
-          <div class="meal-type snack"><span class="meal-icon">🍃</span> Snack</div>
-          <div class="meal-name">Fresh Mango Slices</div>
-          <div class="meal-desc">1 medium fresh mango with a squeeze of lime and a tiny pinch of chilli flakes — a perfect Vietnamese-style fruit snack</div>
-          <div class="meal-cal">~100 kcal · 1g P · 25g C · 0g F</div>
-        </div>
-      </div>
-    </div>
+      <div class="arrow">›</div>
+    </a>
 
-    <!-- DAY 3 -->
-    <div class="day-card">
-      <div class="day-header">
-        <div class="day-header-left">
-          <div class="day-number">03</div>
-          <div class="day-title-block">
-            <h2>Day Three</h2>
-            <span class="cuisine-tag">🇰🇷 Korean Bold & Spicy</span>
-          </div>
-        </div>
-        <div class="day-macros">
-          <div class="macro-pill total"><span class="val">1,195</span><span class="lbl">kcal</span></div>
-          <div class="macro-pill"><span class="val">85g</span><span class="lbl">protein</span></div>
-          <div class="macro-pill"><span class="val">130g</span><span class="lbl">carbs</span></div>
-          <div class="macro-pill"><span class="val">34g</span><span class="lbl">fat</span></div>
-        </div>
-      </div>
-      <div class="meals-grid">
-        <div class="meal-item">
-          <div class="meal-type breakfast"><span class="meal-icon">🌅</span> Breakfast</div>
-          <div class="meal-name">Gyeran-Guk (Egg Drop Rice Soup)</div>
-          <div class="meal-desc">Silky egg drop soup made with anchovy broth, GF tamari, zucchini, over half a cup of warm rice — Korean comfort in a bowl</div>
-          <div class="meal-cal">~265 kcal · 14g P · 38g C · 6g F</div>
-        </div>
-        <div class="meal-item">
-          <div class="meal-type lunch"><span class="meal-icon">☀️</span> Lunch</div>
-          <div class="meal-name">Ground Chicken Bibimbap</div>
-          <div class="meal-desc">Seasoned ground chicken over rice with sautéed spinach, julienned carrots, cucumber ribbons, topped with a fried egg & GF gochujang</div>
-          <div class="meal-cal">~400 kcal · 32g P · 46g C · 11g F</div>
-        </div>
-        <div class="meal-item">
-          <div class="meal-type dinner"><span class="meal-icon">🌙</span> Dinner</div>
-          <div class="meal-name">Japchae (Glass Noodles & Beef)</div>
-          <div class="meal-desc">Sweet potato glass noodles tossed with sliced beef, shiitake mushrooms, spinach, carrots, sesame oil & GF tamari — naturally gluten-free</div>
-          <div class="meal-cal">~400 kcal · 28g P · 42g C · 12g F</div>
-        </div>
-        <div class="meal-item">
-          <div class="meal-type snack"><span class="meal-icon">🍃</span> Snack</div>
-          <div class="meal-name">Apple & Almond Butter</div>
-          <div class="meal-desc">1 medium apple sliced with 1 tbsp natural almond butter — crisp, creamy, and keeps you full between meals</div>
-          <div class="meal-cal">~130 kcal · 4g P · 22g C · 5g F</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- DAY 4 -->
-    <div class="day-card">
-      <div class="day-header">
-        <div class="day-header-left">
-          <div class="day-number">04</div>
-          <div class="day-title-block">
-            <h2>Day Four</h2>
-            <span class="cuisine-tag">🇹🇭 Thai Aromatic</span>
-          </div>
-        </div>
-        <div class="day-macros">
-          <div class="macro-pill total"><span class="val">1,200</span><span class="lbl">kcal</span></div>
-          <div class="macro-pill"><span class="val">68g</span><span class="lbl">protein</span></div>
-          <div class="macro-pill"><span class="val">140g</span><span class="lbl">carbs</span></div>
-          <div class="macro-pill"><span class="val">38g</span><span class="lbl">fat</span></div>
-        </div>
-      </div>
-      <div class="meals-grid">
-        <div class="meal-item">
-          <div class="meal-type breakfast"><span class="meal-icon">🌅</span> Breakfast</div>
-          <div class="meal-name">Coconut Chia Pudding + Mango</div>
-          <div class="meal-desc">3 tbsp chia seeds soaked overnight in light coconut milk, topped with fresh mango cubes, toasted coconut flakes — prep the night before!</div>
-          <div class="meal-cal">~295 kcal · 8g P · 40g C · 13g F</div>
-        </div>
-        <div class="meal-item">
-          <div class="meal-type lunch"><span class="meal-icon">☀️</span> Lunch</div>
-          <div class="meal-name">Thai Larb (Minced Chicken Salad)</div>
-          <div class="meal-desc">Minced chicken with toasted rice powder, shallots, fresh mint, cilantro, GF fish sauce & lime dressing, served with steamed jasmine rice</div>
-          <div class="meal-cal">~355 kcal · 32g P · 36g C · 9g F</div>
-        </div>
-        <div class="meal-item">
-          <div class="meal-type dinner"><span class="meal-icon">🌙</span> Dinner</div>
-          <div class="meal-name">Thai Green Curry with Tofu</div>
-          <div class="meal-desc">Firm tofu & zucchini simmered in homemade GF green curry paste with light coconut milk, Thai basil, served with jasmine rice</div>
-          <div class="meal-cal">~420 kcal · 20g P · 50g C · 15g F</div>
-        </div>
-        <div class="meal-item">
-          <div class="meal-type snack"><span class="meal-icon">🍃</span> Snack</div>
-          <div class="meal-name">Rice Cakes + Almond Butter</div>
-          <div class="meal-desc">2 plain GF rice cakes topped with 1 tbsp almond butter and a light drizzle of honey — quick and satisfying</div>
-          <div class="meal-cal">~130 kcal · 4g P · 18g C · 4g F</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- DAY 5 -->
-    <div class="day-card">
-      <div class="day-header">
-        <div class="day-header-left">
-          <div class="day-number">05</div>
-          <div class="day-title-block">
-            <h2>Day Five</h2>
-            <span class="cuisine-tag">🇨🇳 Chinese Homestyle</span>
-          </div>
-        </div>
-        <div class="day-macros">
-          <div class="macro-pill total"><span class="val">1,195</span><span class="lbl">kcal</span></div>
-          <div class="macro-pill"><span class="val">94g</span><span class="lbl">protein</span></div>
-          <div class="macro-pill"><span class="val">118g</span><span class="lbl">carbs</span></div>
-          <div class="macro-pill"><span class="val">34g</span><span class="lbl">fat</span></div>
-        </div>
-      </div>
-      <div class="meals-grid">
-        <div class="meal-item">
-          <div class="meal-type breakfast"><span class="meal-icon">🌅</span> Breakfast</div>
-          <div class="meal-name">Ginger Congee (Rice Porridge)</div>
-          <div class="meal-desc">Silky rice porridge cooked with fresh ginger and scallion, topped with a soft-boiled egg, sesame oil drizzle, and a sprinkle of white pepper</div>
-          <div class="meal-cal">~280 kcal · 12g P · 44g C · 6g F</div>
-        </div>
-        <div class="meal-item">
-          <div class="meal-type lunch"><span class="meal-icon">☀️</span> Lunch</div>
-          <div class="meal-name">Chicken & Broccoli Stir-Fry</div>
-          <div class="meal-desc">Classic Chinese-American chicken & broccoli with GF oyster-tamari sauce, garlic, ginger over brown rice — a weekday staple made healthy</div>
-          <div class="meal-cal">~370 kcal · 36g P · 38g C · 9g F</div>
-        </div>
-        <div class="meal-item">
-          <div class="meal-type dinner"><span class="meal-icon">🌙</span> Dinner</div>
-          <div class="meal-name">Steamed Ginger-Scallion Fish</div>
-          <div class="meal-desc">Whole white fish fillet (cod or sea bass) steamed with ginger, scallion, hot tamari-sesame oil drizzle, with stir-fried bok choy & rice</div>
-          <div class="meal-cal">~395 kcal · 44g P · 30g C · 10g F</div>
-        </div>
-        <div class="meal-item">
-          <div class="meal-type snack"><span class="meal-icon">🍃</span> Snack</div>
-          <div class="meal-name">Raw Cashews</div>
-          <div class="meal-desc">A small handful (25g) of lightly salted raw cashews — satisfying, protein-rich, and great for curbing afternoon hunger</div>
-          <div class="meal-cal">~150 kcal · 5g P · 9g C · 12g F</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- DAY 6 -->
-    <div class="day-card">
-      <div class="day-header">
-        <div class="day-header-left">
-          <div class="day-number">06</div>
-          <div class="day-title-block">
-            <h2>Day Six</h2>
-            <span class="cuisine-tag">🌿 Western Scratch-Cooking Day</span>
-          </div>
-        </div>
-        <div class="day-macros">
-          <div class="macro-pill total"><span class="val">1,215</span><span class="lbl">kcal</span></div>
-          <div class="macro-pill"><span class="val">97g</span><span class="lbl">protein</span></div>
-          <div class="macro-pill"><span class="val">108g</span><span class="lbl">carbs</span></div>
-          <div class="macro-pill"><span class="val">46g</span><span class="lbl">fat</span></div>
-        </div>
-      </div>
-      <div class="meals-grid">
-        <div class="meal-item">
-          <div class="meal-type breakfast"><span class="meal-icon">🌅</span> Breakfast</div>
-          <div class="meal-name">Sweet Potato Hash & Eggs</div>
-          <div class="meal-desc">Diced sweet potato, bell peppers & onion hash with 2 poached eggs, ½ avocado, fresh herbs and a pinch of smoked paprika</div>
-          <div class="meal-cal">~310 kcal · 14g P · 32g C · 14g F</div>
-        </div>
-        <div class="meal-item">
-          <div class="meal-type lunch"><span class="meal-icon">☀️</span> Lunch</div>
-          <div class="meal-name">Grilled Chicken & Roast Veg Salad</div>
-          <div class="meal-desc">Grilled chicken breast over roasted courgette, cherry tomatoes, red onion, rocket & mixed leaves with a zesty lemon-olive oil dressing</div>
-          <div class="meal-cal">~360 kcal · 38g P · 22g C · 14g F</div>
-        </div>
-        <div class="meal-item">
-          <div class="meal-type dinner"><span class="meal-icon">🌙</span> Dinner</div>
-          <div class="meal-name">Herb-Baked Salmon & Quinoa</div>
-          <div class="meal-desc">Oven-baked salmon with lemon, dill & garlic, served with fluffy quinoa, roasted asparagus and a light tahini drizzle</div>
-          <div class="meal-cal">~405 kcal · 42g P · 30g C · 14g F</div>
-        </div>
-        <div class="meal-item">
-          <div class="meal-type snack"><span class="meal-icon">🍃</span> Snack</div>
-          <div class="meal-name">Banana & Almond Butter</div>
-          <div class="meal-desc">1 medium banana with 1 tbsp almond butter — the classic combo; great pre or post a light walk</div>
-          <div class="meal-cal">~140 kcal · 4g P · 27g C · 5g F</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- DAY 7 -->
-    <div class="day-card">
-      <div class="day-header">
-        <div class="day-header-left">
-          <div class="day-number">07</div>
-          <div class="day-title-block">
-            <h2>Day Seven</h2>
-            <span class="cuisine-tag">🇮🇳 Indian Spiced</span>
-          </div>
-        </div>
-        <div class="day-macros">
-          <div class="macro-pill total"><span class="val">1,175</span><span class="lbl">kcal</span></div>
-          <div class="macro-pill"><span class="val">82g</span><span class="lbl">protein</span></div>
-          <div class="macro-pill"><span class="val">128g</span><span class="lbl">carbs</span></div>
-          <div class="macro-pill"><span class="val">32g</span><span class="lbl">fat</span></div>
-        </div>
-      </div>
-      <div class="meals-grid">
-        <div class="meal-item">
-          <div class="meal-type breakfast"><span class="meal-icon">🌅</span> Breakfast</div>
-          <div class="meal-name">Masala Scrambled Eggs + GF Toast</div>
-          <div class="meal-desc">3 eggs scrambled with cumin, turmeric, diced tomato, green chilli & coriander, served with 1 slice GF sourdough toast and sliced tomato</div>
-          <div class="meal-cal">~285 kcal · 18g P · 26g C · 12g F</div>
-        </div>
-        <div class="meal-item">
-          <div class="meal-type lunch"><span class="meal-icon">☀️</span> Lunch</div>
-          <div class="meal-name">Red Lentil Dal + Steamed Rice</div>
-          <div class="meal-desc">Comforting masoor dal tempered with cumin, mustard seeds, ginger & turmeric, served over steamed basmati rice with sliced cucumber</div>
-          <div class="meal-cal">~380 kcal · 22g P · 62g C · 6g F</div>
-        </div>
-        <div class="meal-item">
-          <div class="meal-type dinner"><span class="meal-icon">🌙</span> Dinner</div>
-          <div class="meal-name">Tandoori Chicken + Coconut Raita</div>
-          <div class="meal-desc">Oven-roasted tandoori-spiced chicken thighs with cauliflower rice, cucumber raita made with coconut yogurt, mint & cumin</div>
-          <div class="meal-cal">~425 kcal · 40g P · 30g C · 14g F</div>
-        </div>
-        <div class="meal-item">
-          <div class="meal-type snack"><span class="meal-icon">🍃</span> Snack</div>
-          <div class="meal-name">Mixed Fresh Berries</div>
-          <div class="meal-desc">A bowl of mixed strawberries, blueberries & raspberries — low-calorie, antioxidant-rich, and the perfect sweet finish to the week!</div>
-          <div class="meal-cal">~85 kcal · 1g P · 20g C · 0g F</div>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- end day-grid -->
-
-  <!-- TIPS SECTION -->
-  <h2 class="section-title">💡 Dietitian Tips for Success</h2>
-  <div class="tips-grid">
-    <div class="tip-card">
-      <h4>🧂 GF Staples to Stock Up On</h4>
-      <ul>
-        <li>GF tamari (not regular soy sauce)</li>
-        <li>Certified GF white & red miso paste</li>
-        <li>Rice noodles & sweet potato glass noodles</li>
-        <li>GF oyster sauce or coconut aminos</li>
-        <li>GF gochujang (check the label carefully!)</li>
-        <li>GF fish sauce (most are naturally GF)</li>
-      </ul>
-    </div>
-    <div class="tip-card">
-      <h4>🥥 Dairy-Free Swaps Used</h4>
-      <ul>
-        <li>Light coconut milk → replaces cream</li>
-        <li>Coconut yogurt → used in raita & sauces</li>
-        <li>Sesame oil → adds richness & depth</li>
-        <li>Nut butters → snacks and satiety</li>
-        <li>Almond or oat milk → if needed in any baking</li>
-      </ul>
-    </div>
-    <div class="tip-card">
-      <h4>🍚 Meal Prep Shortcuts</h4>
-      <ul>
-        <li>Cook a big pot of rice on Sunday — reheat all week</li>
-        <li>Pre-marinate proteins overnight (chicken teriyaki, tandoori)</li>
-        <li>Make congee in bulk; it keeps 3 days refrigerated</li>
-        <li>Prep chia pudding the night before (Day 4)</li>
-        <li>Chop all veg for the week on Sunday</li>
-      </ul>
-    </div>
-    <div class="tip-card">
-      <h4>⚖️ Weight Loss Reminders</h4>
-      <p>Consistency > perfection. If you go over 1200 cal on one day, don't stress — just get back on track. Add a 20–30 min walk daily to support your deficit. Eating slowly and mindfully prevents overeating even on lower-cal plans. Track meals if it helps keep you accountable!</p>
-    </div>
-    <div class="tip-card">
-      <h4>💧 Hydration & Extras</h4>
-      <p>Aim for 8 glasses of water daily. Unsweetened green tea is excellent — it's calorie-free and pairs beautifully with your Asian meal days. Bone broth (GF) is a great low-cal snack option too. Avoid sugary drinks and fruit juices — stick to whole fruit for sweetness.</p>
-    </div>
-    <div class="tip-card">
-      <h4>🔄 Flexibility Notes</h4>
-      <p>Swap proteins freely — chicken ↔ shrimp ↔ tofu ↔ fish. Scale rice portions down by ¼ cup if you want to cut 50–70 more calories. The plan is a guide, not a prison! Enjoy cooking and make each meal yours.</p>
-    </div>
   </div>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p><strong>⚠️ Disclaimer:</strong> This meal plan is for general informational purposes and is not a substitute for personalised medical or dietitian advice.</p>
-    <p>Always consult a qualified healthcare professional before starting any new diet, especially if you have underlying health conditions.</p>
-    <p style="margin-top:12px; color: var(--miso);">🌸 Enjoy every bite of this nourishing week — you've got this! 🌸</p>
-  </footer>
+  <div class="footer">Made with 🥦 · Gluten-free &amp; Dairy-free</div>
 
 </div>
 </body>
